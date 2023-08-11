@@ -160,8 +160,9 @@ processTask - Worker function
 Both used to create child process
 
 - Spawn
-  used to run commands, shell scripts and capturing output
-  creates new process and executes commands
+
+  1. used to run commands, shell scripts and capturing output
+  2. creates new process and executes commands
 
   ```js
   const { spawn } = require("child_process");
@@ -177,9 +178,10 @@ Both used to create child process
   ```
 
 - fork
-  ideal for CPU intensive task
-  child and parent proccessing communication - using IPC - inter process communication
-  utilizing multiple CPU cores
+
+  1. ideal for CPU intensive task
+  2. child and parent proccessing communication - using IPC - inter process communication
+  3. utilizing multiple CPU cores
 
   ```js
   const { fork } = require("child_process");
@@ -194,4 +196,11 @@ Both used to create child process
 ### 15. What is ExpressJS and Purpose of ExpressJS
 
 It is minimal and flexiable web application framework
-Features - Routing - RESTful APIS - Middleware Ecosystem - Template Engine - Serving Static Files - HTTP Utility Methods
+Features
+
+1. Routing
+2. RESTful APIS
+3. Middleware Ecosystem
+4. Template Engine
+5. Serving Static Files
+6. HTTP Utility Methods
