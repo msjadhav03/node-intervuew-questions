@@ -60,10 +60,11 @@ handles urls, query string and individual compenents - protocal, hostname, pathn
 - formatting url - url.format()
 - Resolving url - url.resolve()
 
-```
-const url = require('url');
+```js
+const url = require("url");
 
-const urlString = 'https://www.example.com:8080/path/to/resource?query=value#fragment';
+const urlString =
+  "https://www.example.com:8080/path/to/resource?query=value#fragment";
 
 const parsedUrl = url.parse(urlString);
 console.log(parsedUrl);
@@ -71,18 +72,17 @@ console.log(parsedUrl);
 const formattedUrl = url.format(parsedUrl);
 console.log(formattedUrl);
 
-const resolvedUrl = url.resolve('https://www.example.com/', 'newpath');
+const resolvedUrl = url.resolve("https://www.example.com/", "newpath");
 console.log(resolvedUrl);
 
 const params = new url.URLSearchParams(parsedUrl.query);
-params.append('newParam', '123');
+params.append("newParam", "123");
 console.log(params.toString());
-
 ```
 
 Output
 
-```
+```js
 Url {
   protocol: 'https:',
   slashes: true,
@@ -129,28 +129,27 @@ creates Queue object to do asynchronus processing
 1. Worker function - function to do process
 2. Concurrency Limit - no of tasks that executed concurrently.
 
-```
-const async = require('async');
+```js
+const async = require("async");
 
 // Define the worker function
 function processTask(task, callback) {
-    // Process the task asynchronously
-    console.log(`Processing task: ${task}`);
-    setTimeout(() => {
-        console.log(`Task ${task} completed`);
-        callback(); // Call the callback to signal task completion
-    }, 1000);
+  // Process the task asynchronously
+  console.log(`Processing task: ${task}`);
+  setTimeout(() => {
+    console.log(`Task ${task} completed`);
+    callback(); // Call the callback to signal task completion
+  }, 1000);
 }
 
 // Create a queue with a concurrency limit of 2
 const taskQueue = async.queue(processTask, 2);
 
 // Add tasks to the queue
-taskQueue.push('Task 1');
-taskQueue.push('Task 2');
-taskQueue.push('Task 3');
-taskQueue.push('Task 4');
-
+taskQueue.push("Task 1");
+taskQueue.push("Task 2");
+taskQueue.push("Task 3");
+taskQueue.push("Task 4");
 ```
 
 processTask - Worker function
@@ -164,16 +163,16 @@ Both used to create child process
   used to run commands, shell scripts and capturing output
   creates new process and executes commands
 
-  ```
-  const { spawn } = require('child_process');
-  const ls = spawn('ls', ['-l', '-a']); // Spawn 'ls' command with arguments
+  ```js
+  const { spawn } = require("child_process");
+  const ls = spawn("ls", ["-l", "-a"]); // Spawn 'ls' command with arguments
 
-  ls.stdout.on('data', (data) => {
-      console.log(`stdout: ${data}`);
+  ls.stdout.on("data", (data) => {
+    console.log(`stdout: ${data}`);
   });
 
-  ls.on('close', (code) => {
-      console.log(`Child process exited with code ${code}`);
+  ls.on("close", (code) => {
+    console.log(`Child process exited with code ${code}`);
   });
   ```
 
@@ -182,14 +181,14 @@ Both used to create child process
   child and parent proccessing communication - using IPC - inter process communication
   utilizing multiple CPU cores
 
-  ```
-  const { fork } = require('child_process');
-  const child = fork('child_script.js');
+  ```js
+  const { fork } = require("child_process");
+  const child = fork("child_script.js");
 
-  child.on('message', (message) => {
-      console.log(`Received message from child: ${message}`);
+  child.on("message", (message) => {
+    console.log(`Received message from child: ${message}`);
   });
-  child.send('Hello from parent!');
+  child.send("Hello from parent!");
   ```
 
 ### 15. What is ExpressJS and Purpose of ExpressJS
