@@ -51,3 +51,148 @@ Encapsulating same or interelated code in single unit
 
 - Authentication
 - Error handling
+
+### 10. What is functionality of 'url' module in Node.js?
+
+handles urls, query string and individual compenents - protocal, hostname, pathname, query
+
+- parsing URL - url.parse()
+- formatting url - url.format()
+- Resolving url - url.resolve()
+
+```
+const url = require('url');
+
+const urlString = 'https://www.example.com:8080/path/to/resource?query=value#fragment';
+
+const parsedUrl = url.parse(urlString);
+console.log(parsedUrl);
+
+const formattedUrl = url.format(parsedUrl);
+console.log(formattedUrl);
+
+const resolvedUrl = url.resolve('https://www.example.com/', 'newpath');
+console.log(resolvedUrl);
+
+const params = new url.URLSearchParams(parsedUrl.query);
+params.append('newParam', '123');
+console.log(params.toString());
+
+```
+
+Output
+
+```
+Url {
+  protocol: 'https:',
+  slashes: true,
+  auth: null,
+  host: 'www.example.com:8080',
+  port: '8080',
+  hostname: 'www.example.com',
+  hash: '#fragment',
+  search: '?query=value',
+  query: 'query=value',
+  pathname: '/path/to/resource',
+  path: '/path/to/resource?query=value',
+  href: 'https://www.example.com:8080/path/to/resource?query=value#fragment'
+}
+https://www.example.com:8080/path/to/resource?query=value#fragment
+https://www.example.com/newpath
+query=value&newParam=123
+```
+
+### 11. What is Middleware in Node.js?
+
+- function having access to request, response object and next function
+- executes any type of code
+- can modify request and response object
+- invokes next middleware
+
+### 12. What is libuv?
+
+- multi-platform support liabrary in Node.js
+- Used for async I/O - concurrency and responsiveness
+- Event loop management - handling multiple concurrent operations
+- Networking - building scalable network application - DNS lookup , create and manage n/w sockets, supports TCP and UDP
+- File Management - handling non-blocking I/O opearations
+- Timers and Event Scheduling - set timers and schedule events
+- Thread pool - intensive task leads to event loop blockage - helps to create multple thread - avoid event loop blockage
+- Child Process - To run asynchronously
+- Error Handiling - handling errors, recovering from failures, and reporting errors to application code.
+
+### 13. What are the two argument async.queue takes?
+
+async.queue -
+creates Queue object to do asynchronus processing
+
+1. Worker function - function to do process
+2. Concurrency Limit - no of tasks that executed concurrently.
+
+```
+const async = require('async');
+
+// Define the worker function
+function processTask(task, callback) {
+    // Process the task asynchronously
+    console.log(`Processing task: ${task}`);
+    setTimeout(() => {
+        console.log(`Task ${task} completed`);
+        callback(); // Call the callback to signal task completion
+    }, 1000);
+}
+
+// Create a queue with a concurrency limit of 2
+const taskQueue = async.queue(processTask, 2);
+
+// Add tasks to the queue
+taskQueue.push('Task 1');
+taskQueue.push('Task 2');
+taskQueue.push('Task 3');
+taskQueue.push('Task 4');
+
+```
+
+processTask - Worker function
+2 - concurrency Limit
+
+### 14. Spawn vs Fork
+
+Both used to create child process
+
+- Spawn
+  used to run commands, shell scripts and capturing output
+  creates new process and executes commands
+
+  ```
+  const { spawn } = require('child_process');
+  const ls = spawn('ls', ['-l', '-a']); // Spawn 'ls' command with arguments
+
+  ls.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+  });
+
+  ls.on('close', (code) => {
+      console.log(`Child process exited with code ${code}`);
+  });
+  ```
+
+- fork
+  ideal for CPU intensive task
+  child and parent proccessing communication - using IPC - inter process communication
+  utilizing multiple CPU cores
+
+  ```
+  const { fork } = require('child_process');
+  const child = fork('child_script.js');
+
+  child.on('message', (message) => {
+      console.log(`Received message from child: ${message}`);
+  });
+  child.send('Hello from parent!');
+  ```
+
+### 15. What is ExpressJS and Purpose of ExpressJS
+
+It is minimal and flexiable web application framework
+Features - Routing - RESTful APIS - Middleware Ecosystem - Template Engine - Serving Static Files - HTTP Utility Methods
