@@ -122,7 +122,7 @@ query=value&newParam=123
 
 # What are the two argument async.queue takes?
 
-async.queue -
+- async.queue -
 creates Queue object to do asynchronus processing
 
 1. Worker function - function to do process
@@ -151,7 +151,7 @@ taskQueue.push("Task 3");
 taskQueue.push("Task 4");
 ```
 
-processTask - Worker function
+- processTask - Worker function
 2 - concurrency Limit
 
 # Spawn vs Fork
@@ -248,19 +248,19 @@ const os = require('os')
 const path = require('path')
 ```
 4. Core Modules vs Local Modules
-core Modules : Built in modules
-Local Modules: Modules we create in our project
+- core Modules : Built in modules
+- Local Modules: Modules we create in our project
 5. NPM modules
 external modules from Node Package Manager
 
 # CommonJS Modules
-module system
-Synchronous
-used for structuring and organizing code
-define standardized way to create, import and use modules in as consistent manner.
-role : `modularity`, `code reusablity`
-Cachning: cached after first they are loaded. 
-asynchronous loading using `require.async`
+- module system
+- Synchronous
+- used for structuring and organizing code
+- define standardized way to create, import and use modules in as consistent manner.
+- role : `modularity`, `code reusablity`
+- Cachning: cached after first they are loaded. 
+- asynchronous loading using `require.async`
 
 # NPM
 - package Manager 
@@ -279,10 +279,10 @@ npm update express
 npm publish
 ```
 # EventEmitters
-core modules in Node.js
-implement custom event driven architecture
-allows to emit event and register listerners
-used for handling asynchronous events
+- core modules in Node.js
+- implement custom event driven architecture
+- allows to emit event and register listerners
+- used for handling asynchronous events
 1. Import
 ```js
 const EventEmitter = require('events')
@@ -317,19 +317,19 @@ emitter.removeAllListener('event-name')
 ```
 
 # Streams
-handling data flow
-need to work with large amount of data 
-allows data to processed piece by piece
-benefits - reducing memory consumption and improving performance
-Types
-- Readable
-- Writable
-- Duplex
-- Transform
+- handling data flow
+- need to work with large amount of data 
+- allows data to processed piece by piece
+- benefits - reducing memory consumption and improving performance
+- Types
+  - Readable
+  - Writable
+  - Duplex
+  - Transform
 
 # HTTP Module
-inbuilt module, provides functionality for creating HTTP servers and making HTTP requests
-Building `web applications`,`RESTful APIs`,`Network Communication`
+- inbuilt module, provides functionality for creating HTTP servers and making HTTP requests
+- Building `web applications`,`RESTful APIs`,`Network Communication`
 ```js
 const http = require('http')
 const server = http.createServer((req,res)=>{
@@ -393,10 +393,10 @@ req.end();
 # crypto
 
 # stream
-used to handle large data flow
-allows to process data piece by piece
-reducing node memory usage, Performance improvement
-Types - `Writeable`,`Readable`,`Duplex`,`Transform`
+- used to handle large data flow
+- allows to process data piece by piece
+- reducing node memory usage, Performance improvement
+- Types - `Writeable`,`Readable`,`Duplex`,`Transform`
 
 # querystring
 
@@ -405,18 +405,18 @@ Types - `Writeable`,`Readable`,`Duplex`,`Transform`
 # Modules and NPM
 
 # Middleware
-function exceuted sequentially
-Type
-- Global - application level middleware
-- Route Specific - Route Specific middleware
-eg. logging, authentication, validation
+- function exceuted sequentially
+- Type
+  - Global - application level middleware
+  - Route Specific - Route Specific middleware
+  eg. logging, authentication, validation
 
 # Promises and Async/Await
 
 # Clutser and Child Processes
-allows to create child processes from single node.js process
-help to use multiple cores and improve performance of your application
-`ditributing workload`, `improve performance`
+- allows to create child processes from single node.js process
+- help to use multiple cores and improve performance of your application
+- `ditributing workload`, `improve performance`
 
 # Memory Management
 
@@ -478,17 +478,17 @@ help to use multiple cores and improve performance of your application
 
 # handling Errors in Node.js
 
-callbacks - error as the first argument
-Promises - try/catch
+- callbacks - error as the first argument
+- Promises - try/catch
 
 # Pyramid od Doom (nested Callbacks)
-nested callbacks
-unreadable code and complex to maintain
-async.js, Promises, async/await
+- nested callbacks
+- unreadable code and complex to maintain
+- async.js, Promises, async/await
 
 # Middleware
-functions that are executed sequentially in order they are defined
-task logging, authentication, data parsing
+- functions that are executed sequentially in order they are defined
+- task logging, authentication, data parsing
 - global middleware - application level
 - route specific middleware - applied to routes
 
@@ -498,19 +498,19 @@ task logging, authentication, data parsing
 - used to defere the execution of a function until the next iteration
 
 # garbage collection
-automatic involves identifying and releasing memory that is no longer in use by the application
-`v8 garbage collector` to manage memory
+- automatic involves identifying and releasing memory that is no longer in use by the application
+- `v8 garbage collector` to manage memory
 
 # Handling Sensitive Data
-`ENV variables` - use Environment Variables
-`configuration liabrary (dotenv)` - load configuration variables from the ENV files
-`cloud services` - Built in mechanism to managing secrets
+- `ENV variables` - use Environment Variables
+- `configuration liabrary (dotenv)` - load configuration variables from the ENV files
+- `cloud services` - Built in mechanism to managing secrets
 
 # Event Driven Architecture
 - responding to events triggerd by user action or system event 
 - fundamental aspect of Node.js
-Built around non-blocking and asynchronous I/O 
-eg. `user action` - network request, `file being read`
+- Built around non-blocking and asynchronous I/O 
+- eg. `user action` - network request, `file being read`
 
 # Timers Module
 
