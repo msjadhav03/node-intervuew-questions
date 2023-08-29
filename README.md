@@ -1,33 +1,32 @@
 # NodeJS
 
-### <span style="color: red;">1. What is Node.js?</span>
-
+#  What is Node.js?
 - open-source
 - cross-platform
 - runtime Environment
 - runs Javascript outside the browser
 - created by Ryan Dahl
 
-### 2. How to avoid callback hell?
+# How to avoid callback hell?
 
 - independent functions - modularization
 - use of async and await
 - use of promises
 
-### 3. When to use worker process or background process?
+# When to use worker process or background process?
 
 - highly intensive data proccessing task
 
-### 4. What are types of API function in Node.js?
+# What are types of API function in Node.js?
 
 - Blocking functions - Blocks other codes from executing
 - Non-Blocking - Do not block other code form executing - all i/o operations done concurrently
 
-### 5. What is chaining in Node.js
+# What is chaining in Node.js
 
 Output of one stream is connected to another stream. Creating chain of multple stream operations.
 
-### 6. What are streams in Node.js?
+# What are streams in Node.js?
 
 Streams helps to read and write data from destination as continous proccess.
 
@@ -36,23 +35,23 @@ Streams helps to read and write data from destination as continous proccess.
 - read and write stream
 - duplex stream - performs processing as per available input
 
-### 7. What is package.json?
+# What is package.json?
 
 - heart of the application
 - manifest
 - metadata about application
 - properties of application
 
-### 8. What is module.exports ?
+# What is module.exports ?
 
 Encapsulating same or interelated code in single unit
 
-### 9. What are security implementations Node.js provide?
+# What are security implementations Node.js provide?
 
 - Authentication
 - Error handling
 
-### 10. What is functionality of 'url' module in Node.js?
+# What is functionality of 'url' module in Node.js?
 
 handles urls, query string and individual compenents - protocal, hostname, pathname, query
 
@@ -102,14 +101,14 @@ https://www.example.com/newpath
 query=value&newParam=123
 ```
 
-### 11. What is Middleware in Node.js?
+# What is Middleware in Node.js?
 
 - function having access to request, response object and next function
 - executes any type of code
 - can modify request and response object
 - invokes next middleware
 
-### 12. What is libuv?
+# What is libuv?
 
 - multi-platform support liabrary in Node.js
 - Used for async I/O - concurrency and responsiveness
@@ -121,7 +120,7 @@ query=value&newParam=123
 - Child Process - To run asynchronously
 - Error Handiling - handling errors, recovering from failures, and reporting errors to application code.
 
-### 13. What are the two argument async.queue takes?
+# What are the two argument async.queue takes?
 
 async.queue -
 creates Queue object to do asynchronus processing
@@ -155,7 +154,7 @@ taskQueue.push("Task 4");
 processTask - Worker function
 2 - concurrency Limit
 
-### 14. Spawn vs Fork
+# Spawn vs Fork
 
 Both used to create child process
 
@@ -193,7 +192,7 @@ Both used to create child process
   child.send("Hello from parent!");
   ```
 
-### 15. What is ExpressJS and Purpose of ExpressJS
+#  What is ExpressJS and Purpose of ExpressJS
 
 It is minimal and flexiable web application framework
 Features
@@ -204,61 +203,6 @@ Features
 4. Template Engine
 5. Serving Static Files
 6. HTTP Utility Methods
-
-
-[1. Asynchronous and Non-Blocking](#Asynchronous)
-[2. Event Loop](#eventloop)
-[3. Modules](#modules)
-[4. CommonJS](#commonjs)
-[5. NPM](#npm)
-[6. EventEmitters](#eventEmitter)
-[7. Streams](#streams)
-[8. HTTP Module](#http)
-[9. Express.js](#expressJS)
-[11. Callback Hell](#callbackhell)
-[12. Error Handling](#errorHandling)
-[13. Concurrency and Scaling](#concurrenyAndScaling)
-[14. fs](#fs)
-[15. http](#httpModule)
-[16. path](#path)
-[17. os](#os)
-[18. events](#events)
-[19. util](#util)
-[20. crypto](#crypto)
-[21. stream](#stream)
-[22. querystring](#querystring)
-[23. url](#url)
-[24. Modules and NPM](#modulesAndNPM)
-[25. Middleware](#middleware)
-[26. Promises and async/await](#promisesAndAsyncAwait)
-[27. Clutser and Child Processes](#clusterAndChildProcess)
-[28. Memory Management](#memoryManagement)
-[29. Security](#security)
-[30. Debugging and Profiling](#debugging)
-[31. Caching and Performance Optimization](#cachingAndPerformanceOptimization)
-[32. Websocket](#websocket)
-[33. Authentication and Authorization](#authenticationAndAuthorization)
-[34. Microservices](#microservices)
-[35. Docker and Containerization](#docker)
-[36. GraphQL](graphql)
-[37. REST](rest)
-[38. Kafka](#kafka)
-[39. RabitMQ](#rabitmq)
-[40. GRPC](#grpc)
-[41. Serverless Architecture](#serverlessArchitecture)
-[42. Testing and Test Automation](#testing)
-[43. Depedency Injection](#dependencyInjection)
-[44. Performance Monitoring and Profiling](#performanceMonitotring)
-[45. Internationalization](#internationalization)
-[46. Web Assembly](#webAssembly)
-[47. Real Time Data Processing](#realTimeProcessing)
-[48. Hot Module Replacement](#hotModuleReplacement)
-[49. Server Side Rendering](#serverSideRendering)
-[50. Serverless Framework](#serverlessFramework)
-[51. Service Workers](#serviceWorkers)
-[52. Error Codes](#errorCodes)
-[53. import vs require](#importVsRequire)
-
 
 # Asynchornous and non blocking
 - Asynchronous : Asynchronous programming refer to the ability to execute multiple operations concurrently without waiting for other operation to complete
